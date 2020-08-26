@@ -150,3 +150,25 @@ Legend:
             
             
 ### Billing Service API for Partners
+- POST /partner --> Boolean
+    - Create a new connect account for a partner
+    - Called by frontend directly
+    - req.body
+        - country
+        - email
+        - business_type 
+            - individual
+            - company
+            - non-profit
+        - company 
+            - info about the company
+        - individual
+            - info about the individual
+
+- PUT     /partner/:partnerID --> Boolean
+- DELETE  /partner/:partnerID --> Boolean
+- GET     /partner/:partnerID --> Boolean
+
+- POST    /partner/transfer
+
+
