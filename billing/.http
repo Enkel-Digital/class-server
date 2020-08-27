@@ -84,3 +84,37 @@ content-type: application/json
 ### get stripe client secret
 # GET /setupIntent/card-wallet/:userAccountID
 GET {{host}}/setupIntent/card-wallet/1
+
+
+### Check if user exists as a stripe Customer
+# GET /partner/exists/:userID
+GET {{host}}/partner/exists/1
+
+### Create Partner account
+POST {{host}}/partner
+content-type: application/json
+
+{
+    "partnerID":"1",
+    "type": "standard",
+    "country": "SG",
+    "email": "fortest@example.com",
+    "businessType":"company"
+  
+}
+
+### Create accout link
+POST {{host}}/partner/link/1
+content-type: application/json
+
+{
+  
+}
+
+### create account link to update info
+POST {{host}}/partner/link/update/1
+content-type: application/json
+
+{
+  
+}
