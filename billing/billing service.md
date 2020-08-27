@@ -150,6 +150,12 @@ Legend:
             
             
 ### Billing Service API for Partners
+- reference: https://stripe.com/docs/connect/standard-accounts
+
+- GET /user/exists/:partnerID --> Boolean
+    - Checks if paerner object exists for this partnerID
+    - Can be called by both frontend and backend.
+
 - POST /partner --> Boolean
     - Create a new connect account for a partner
     - Called by frontend directly
@@ -165,10 +171,22 @@ Legend:
         - individual
             - info about the individual
 
-- PUT     /partner/:partnerID --> Boolean
-- DELETE  /partner/:partnerID --> Boolean
-- GET     /partner/:partnerID --> Boolean
 
-- POST    /partner/transfer
+
+- POST    /partner/link/:partnerID
+    - create a account link for the partner to onboarding
+    - req.body
+        - account 
+            - the identifier of the account to create an account link for.
+        - refresh_url 
+            - The URL that the user will be redirected to if the account link is no longer valid.
+        - return_url 
+            - the URL that the user will be redirected to upon leaving or completing the linked flow.
+        - type 
+            - The type of account link the user is requesting. Possible values are account_onboarding or account_update.
+
+// TODO: webhook: Listening to account.updated webhooks
+//  Handle users that have not completed onboarding
+
 
 
