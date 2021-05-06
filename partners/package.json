@@ -43,7 +43,7 @@
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
     "rrule": "^2.6.6",
-    "sanitize-html": "^2.2.0",
+    "sanitize-html": "^2.3.2",
     "unixseconds": "^0.1.0",
     "validator": "^13.5.2"
   },
